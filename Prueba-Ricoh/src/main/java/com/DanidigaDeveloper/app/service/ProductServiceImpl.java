@@ -1,5 +1,6 @@
 package com.DanidigaDeveloper.app.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class ProductServiceImpl implements ProductService{
 	
 	@Override
 	@Transactional(readOnly = true)
-	public Iterable<Product> findAll() {
+	public List<Product> findAll() {
 		
 		return productRepository.findAll();
 	}
