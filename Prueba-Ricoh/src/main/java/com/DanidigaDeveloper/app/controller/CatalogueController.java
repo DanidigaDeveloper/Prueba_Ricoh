@@ -29,7 +29,7 @@ public class CatalogueController {
 	private ProductService productService;
 	
 	
-	//READ ALL Products
+	//READ ALL Catalogs
 	@GetMapping()
 	public List<Catalogue> retrieveAllCatalogues() {
 		LOGGER.debug("[retrieveAllCatalogues]: INIT");

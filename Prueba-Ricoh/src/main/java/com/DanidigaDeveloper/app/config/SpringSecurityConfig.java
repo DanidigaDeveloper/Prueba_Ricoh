@@ -1,4 +1,4 @@
-package com.DanidigaDeveloper.app.config;
+/*package com.DanidigaDeveloper.app.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -37,4 +37,4 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
                 .csrf().disable()
                 .formLogin().disable();
     }
-}
+}*/
