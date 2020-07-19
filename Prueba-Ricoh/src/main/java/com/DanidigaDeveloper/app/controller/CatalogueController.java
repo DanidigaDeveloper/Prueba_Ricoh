@@ -1,5 +1,6 @@
 package com.DanidigaDeveloper.app.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.DanidigaDeveloper.app.entity.Catalogue;
 import com.DanidigaDeveloper.app.service.CatalogueService;
+import com.DanidigaDeveloper.app.service.ProductService;
 
 @RestController
 @RequestMapping("/api/catalogue")
@@ -23,8 +25,19 @@ public class CatalogueController {
 	@Autowired
 	private CatalogueService catalogueService;
 	
+	@Autowired
+	private ProductService productService;
+	
+	
+	//READ ALL Products
+	@GetMapping()
+	public List<Catalogue> retrieveAllCatalogues() {
+		LOGGER.debug("[retrieveAllCatalogues]: INIT");
+		return catalogueService.findAll();
+	}
+		
 	//READ a Catalogue
-	@GetMapping("catalogue/{id}")
+	@GetMapping("{id}")
 	public ResponseEntity<?> readCatalogue (@PathVariable Long id)
 	{
 		Optional <Catalogue> optCatalogue = catalogueService.findById(id);	

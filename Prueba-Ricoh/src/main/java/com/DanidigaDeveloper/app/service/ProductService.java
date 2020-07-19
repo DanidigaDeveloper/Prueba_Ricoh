@@ -6,6 +6,8 @@ import com.DanidigaDeveloper.app.entity.Product;
 
 public interface ProductService {
 
+	public List<Product> findAllByCatalogue(long CatalogueId);
+	
 	public List<Product> findAll();
 	
 	public Optional<Product> findById(Long Id);

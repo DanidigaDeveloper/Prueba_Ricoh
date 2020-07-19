@@ -1,54 +1,79 @@
-2020-07-18 12:00:19,827 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Starting PruebaRicohApplication on DESKTOP-H7E2T70 with PID 8640 (C:\Users\dani_\git\localRepository\Prueba-Ricoh\target\classes started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
-2020-07-18 12:00:19,827 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
-2020-07-18 12:00:19,828 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] No active profile set, falling back to default profiles: default
-2020-07-18 12:00:20,602 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
-2020-07-18 12:00:20,607 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
-2020-07-18 12:00:20,609 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
-2020-07-18 12:00:20,611 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
-2020-07-18 12:00:20,615 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
-2020-07-18 12:00:20,619 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
-2020-07-18 12:00:20,623 DEBUG org.hibernate.SQL [task-1] drop table if exists products
-2020-07-18 12:00:20,627 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
-2020-07-18 12:00:20,654 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
-2020-07-18 12:00:20,699 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
-2020-07-18 12:00:20,742 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, description varchar(50), catalogue_id bigint not null, primary key (id)) engine=InnoDB
-2020-07-18 12:00:20,767 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
-2020-07-18 12:00:20,854 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
-2020-07-18 12:00:20,959 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
-2020-07-18 12:00:21,102 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Started PruebaRicohApplication in 1.368 seconds (JVM running for 1233.418)
-2020-07-18 13:22:31,788 DEBUG org.hibernate.SQL [RMI TCP Connection(96)-127.0.0.1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
-2020-07-18 13:22:32,083 DEBUG org.hibernate.SQL [RMI TCP Connection(96)-127.0.0.1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
-2020-07-18 13:22:32,117 DEBUG org.hibernate.SQL [RMI TCP Connection(96)-127.0.0.1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
-2020-07-18 13:22:32,182 DEBUG org.hibernate.SQL [RMI TCP Connection(96)-127.0.0.1] drop table if exists catalogs
-2020-07-18 13:22:32,236 DEBUG org.hibernate.SQL [RMI TCP Connection(96)-127.0.0.1] drop table if exists orders
-2020-07-18 13:22:32,288 DEBUG org.hibernate.SQL [RMI TCP Connection(96)-127.0.0.1] drop table if exists product_order
-2020-07-18 13:22:32,317 DEBUG org.hibernate.SQL [RMI TCP Connection(96)-127.0.0.1] drop table if exists products
-2020-07-18 18:43:00,648 INFO com.DanidigaDeveloper.app.PruebaRicohApplicationTests [main] Starting PruebaRicohApplicationTests on DESKTOP-H7E2T70 with PID 12064 (started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
-2020-07-18 18:43:00,653 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplicationTests [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
-2020-07-18 18:43:00,654 INFO com.DanidigaDeveloper.app.PruebaRicohApplicationTests [main] No active profile set, falling back to default profiles: default
-2020-07-18 18:43:03,957 WARN org.springframework.web.context.support.GenericWebApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'catalogueController': Unsatisfied dependency expressed through field 'catalogueService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.DanidigaDeveloper.app.service.CatalogueService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2020-07-18 18:43:05,902 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
-2020-07-18 18:43:05,991 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
-2020-07-18 18:43:05,995 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
-2020-07-18 18:43:05,999 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
-2020-07-18 18:43:06,035 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
-2020-07-18 18:43:06,040 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
-2020-07-18 18:43:06,044 DEBUG org.hibernate.SQL [task-1] drop table if exists products
-2020-07-18 18:43:06,052 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
-2020-07-18 18:43:06,136 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
-2020-07-18 18:43:06,164 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
-2020-07-18 18:43:06,191 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, description varchar(50), catalogue_id bigint not null, primary key (id)) engine=InnoDB
-2020-07-18 18:43:06,217 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
-2020-07-18 18:43:06,339 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
-2020-07-18 18:43:06,473 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
-2020-07-18 18:43:06,591 DEBUG org.hibernate.SQL [main] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
-2020-07-18 18:43:06,620 DEBUG org.hibernate.SQL [main] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
-2020-07-18 18:43:06,636 DEBUG org.hibernate.SQL [main] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
-2020-07-18 18:43:06,662 DEBUG org.hibernate.SQL [main] drop table if exists catalogs
-2020-07-18 18:43:06,679 DEBUG org.hibernate.SQL [main] drop table if exists orders
-2020-07-18 18:43:06,732 DEBUG org.hibernate.SQL [main] drop table if exists product_order
-2020-07-18 18:43:06,757 DEBUG org.hibernate.SQL [main] drop table if exists products
-2020-07-18 18:43:06,948 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+2020-07-19 10:25:15,558 INFO com.DanidigaDeveloper.app.PruebaRicohApplicationTests [main] Starting PruebaRicohApplicationTests on DESKTOP-H7E2T70 with PID 9076 (started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
+2020-07-19 10:25:15,569 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplicationTests [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-19 10:25:15,571 INFO com.DanidigaDeveloper.app.PruebaRicohApplicationTests [main] No active profile set, falling back to default profiles: default
+2020-07-19 10:25:22,163 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:25:22,190 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:25:22,193 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:25:22,196 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
+2020-07-19 10:25:22,221 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
+2020-07-19 10:25:22,231 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
+2020-07-19 10:25:22,239 DEBUG org.hibernate.SQL [task-1] drop table if exists products
+2020-07-19 10:25:22,251 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:25:22,330 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:25:22,382 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
+2020-07-19 10:25:22,434 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, name varchar(50) not null, price bigint not null, catalogue_id bigint, primary key (id)) engine=InnoDB
+2020-07-19 10:25:22,489 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
+2020-07-19 10:25:22,773 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
+2020-07-19 10:25:23,048 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
+2020-07-19 10:25:23,828 INFO com.DanidigaDeveloper.app.PruebaRicohApplicationTests [main] Started PruebaRicohApplicationTests in 8.686 seconds (JVM running for 10.302)
+2020-07-19 10:25:24,122 DEBUG org.hibernate.SQL [SpringContextShutdownHook] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:25:24,150 DEBUG org.hibernate.SQL [SpringContextShutdownHook] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:25:24,175 DEBUG org.hibernate.SQL [SpringContextShutdownHook] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:25:24,209 DEBUG org.hibernate.SQL [SpringContextShutdownHook] drop table if exists catalogs
+2020-07-19 10:25:24,250 DEBUG org.hibernate.SQL [SpringContextShutdownHook] drop table if exists orders
+2020-07-19 10:25:24,295 DEBUG org.hibernate.SQL [SpringContextShutdownHook] drop table if exists product_order
+2020-07-19 10:25:24,325 DEBUG org.hibernate.SQL [SpringContextShutdownHook] drop table if exists products
+2020-07-19 10:26:51,214 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Starting PruebaRicohApplication on DESKTOP-H7E2T70 with PID 6024 (C:\Users\dani_\git\localRepository\Prueba-Ricoh\target\classes started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
+2020-07-19 10:26:51,216 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-19 10:26:51,217 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-07-19 10:26:54,553 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:26:54,588 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:26:54,590 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:26:54,594 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
+2020-07-19 10:26:54,610 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
+2020-07-19 10:26:54,627 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
+2020-07-19 10:26:54,633 DEBUG org.hibernate.SQL [task-1] drop table if exists products
+2020-07-19 10:26:54,641 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:26:54,707 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:26:54,749 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
+2020-07-19 10:26:54,791 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, name varchar(50) not null, price bigint not null, catalogue_id bigint, primary key (id)) engine=InnoDB
+2020-07-19 10:26:54,840 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
+2020-07-19 10:26:54,972 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
+2020-07-19 10:26:55,126 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
+2020-07-19 10:26:55,544 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Started PruebaRicohApplication in 4.66 seconds (JVM running for 5.92)
+2020-07-19 10:27:32,838 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-07-19 10:27:32,847 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 8 ms
+2020-07-19 10:27:52,388 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-9] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:28:01,769 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:28:07,526 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:28:13,011 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-5] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:28:14,546 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-10] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:28:15,110 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:29:37,539 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Starting PruebaRicohApplication on DESKTOP-H7E2T70 with PID 1700 (C:\Users\dani_\git\localRepository\Prueba-Ricoh\target\classes started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
+2020-07-19 10:29:37,542 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-19 10:29:37,542 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-07-19 10:29:41,305 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:29:41,335 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:29:41,416 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:29:41,448 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
+2020-07-19 10:29:41,508 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
+2020-07-19 10:29:41,538 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
+2020-07-19 10:29:41,571 DEBUG org.hibernate.SQL [task-1] drop table if exists products
+2020-07-19 10:29:41,607 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:29:41,641 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:29:41,720 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
+2020-07-19 10:29:41,775 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, name varchar(50) not null, price bigint not null, catalogue_id bigint, primary key (id)) engine=InnoDB
+2020-07-19 10:29:41,825 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
+2020-07-19 10:29:41,898 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
+2020-07-19 10:29:41,979 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
+2020-07-19 10:29:42,085 DEBUG org.hibernate.SQL [restartedMain] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:29:42,098 DEBUG org.hibernate.SQL [restartedMain] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:29:42,111 DEBUG org.hibernate.SQL [restartedMain] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:29:42,125 DEBUG org.hibernate.SQL [restartedMain] drop table if exists catalogs
+2020-07-19 10:29:42,151 DEBUG org.hibernate.SQL [restartedMain] drop table if exists orders
+2020-07-19 10:29:42,168 DEBUG org.hibernate.SQL [restartedMain] drop table if exists product_order
+2020-07-19 10:29:42,184 DEBUG org.hibernate.SQL [restartedMain] drop table if exists products
+2020-07-19 10:29:42,235 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [restartedMain] 
 
 ***************************
 APPLICATION FAILED TO START
@@ -56,248 +81,312 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field catalogueService in com.DanidigaDeveloper.app.controller.CatalogueController required a bean of type 'com.DanidigaDeveloper.app.service.CatalogueService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
+Web server failed to start. Port 8080 was already in use.
 
 Action:
 
-Consider defining a bean of type 'com.DanidigaDeveloper.app.service.CatalogueService' in your configuration.
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
 
-2020-07-18 18:43:06,954 ERROR org.springframework.test.context.TestContextManager [main] Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@316d30ad] to prepare test instance [com.DanidigaDeveloper.app.PruebaRicohApplicationTests@3ea75b05]
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
-	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1654)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
-	at java.base/java.util.Optional.orElseGet(Optional.java:369)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
-	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
-	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
-	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'catalogueController': Unsatisfied dependency expressed through field 'catalogueService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.DanidigaDeveloper.app.service.CatalogueService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:893)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
-	... 65 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.DanidigaDeveloper.app.service.CatalogueService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1714)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1270)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1224)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
-	... 84 common frames omitted
-2020-07-18 18:46:39,514 INFO com.DanidigaDeveloper.app.PruebaRicohApplicationTests [main] Starting PruebaRicohApplicationTests on DESKTOP-H7E2T70 with PID 1220 (started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
-2020-07-18 18:46:39,518 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplicationTests [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
-2020-07-18 18:46:39,519 INFO com.DanidigaDeveloper.app.PruebaRicohApplicationTests [main] No active profile set, falling back to default profiles: default
-2020-07-18 18:46:42,569 WARN org.springframework.web.context.support.GenericWebApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'catalogueController': Unsatisfied dependency expressed through field 'catalogueService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.DanidigaDeveloper.app.service.CatalogueService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2020-07-18 18:46:44,473 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
-2020-07-18 18:46:44,497 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
-2020-07-18 18:46:44,499 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
-2020-07-18 18:46:44,500 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
-2020-07-18 18:46:44,513 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
-2020-07-18 18:46:44,517 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
-2020-07-18 18:46:44,521 DEBUG org.hibernate.SQL [task-1] drop table if exists products
-2020-07-18 18:46:44,527 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
-2020-07-18 18:46:44,575 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
-2020-07-18 18:46:44,606 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
-2020-07-18 18:46:44,643 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, description varchar(50), catalogue_id bigint not null, primary key (id)) engine=InnoDB
-2020-07-18 18:46:44,668 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
-2020-07-18 18:46:44,771 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
-2020-07-18 18:46:44,927 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
-2020-07-18 18:46:45,094 DEBUG org.hibernate.SQL [main] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
-2020-07-18 18:46:45,108 DEBUG org.hibernate.SQL [main] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
-2020-07-18 18:46:45,120 DEBUG org.hibernate.SQL [main] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
-2020-07-18 18:46:45,134 DEBUG org.hibernate.SQL [main] drop table if exists catalogs
-2020-07-18 18:46:45,157 DEBUG org.hibernate.SQL [main] drop table if exists orders
-2020-07-18 18:46:45,202 DEBUG org.hibernate.SQL [main] drop table if exists product_order
-2020-07-18 18:46:45,217 DEBUG org.hibernate.SQL [main] drop table if exists products
-2020-07-18 18:46:45,391 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field catalogueService in com.DanidigaDeveloper.app.controller.CatalogueController required a bean of type 'com.DanidigaDeveloper.app.service.CatalogueService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.DanidigaDeveloper.app.service.CatalogueService' in your configuration.
-
-2020-07-18 18:46:45,395 ERROR org.springframework.test.context.TestContextManager [main] Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@496cedbb] to prepare test instance [com.DanidigaDeveloper.app.PruebaRicohApplicationTests@6b6def36]
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
-	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1654)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
-	at java.base/java.util.Optional.orElseGet(Optional.java:369)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
-	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
-	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
-	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'catalogueController': Unsatisfied dependency expressed through field 'catalogueService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.DanidigaDeveloper.app.service.CatalogueService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:893)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
-	... 65 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.DanidigaDeveloper.app.service.CatalogueService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1714)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1270)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1224)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
-	... 84 common frames omitted
+2020-07-19 10:29:53,113 DEBUG org.hibernate.SQL [RMI TCP Connection(12)-127.0.0.1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:29:53,116 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [RMI TCP Connection(12)-127.0.0.1] HHH000478: Unsuccessful: alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:29:53,116 DEBUG org.hibernate.SQL [RMI TCP Connection(12)-127.0.0.1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:29:53,117 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [RMI TCP Connection(12)-127.0.0.1] HHH000478: Unsuccessful: alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:29:53,118 DEBUG org.hibernate.SQL [RMI TCP Connection(12)-127.0.0.1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:29:53,119 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [RMI TCP Connection(12)-127.0.0.1] HHH000478: Unsuccessful: alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:29:53,119 DEBUG org.hibernate.SQL [RMI TCP Connection(12)-127.0.0.1] drop table if exists catalogs
+2020-07-19 10:29:53,122 DEBUG org.hibernate.SQL [RMI TCP Connection(12)-127.0.0.1] drop table if exists orders
+2020-07-19 10:29:53,126 DEBUG org.hibernate.SQL [RMI TCP Connection(12)-127.0.0.1] drop table if exists product_order
+2020-07-19 10:29:53,130 DEBUG org.hibernate.SQL [RMI TCP Connection(12)-127.0.0.1] drop table if exists products
+2020-07-19 10:30:11,424 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Starting PruebaRicohApplication on DESKTOP-H7E2T70 with PID 7112 (C:\Users\dani_\git\localRepository\Prueba-Ricoh\target\classes started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
+2020-07-19 10:30:11,426 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-19 10:30:11,427 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-07-19 10:30:14,718 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:30:14,743 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:30:14,744 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:30:14,747 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
+2020-07-19 10:30:14,758 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
+2020-07-19 10:30:14,769 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
+2020-07-19 10:30:14,773 DEBUG org.hibernate.SQL [task-1] drop table if exists products
+2020-07-19 10:30:14,779 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:30:14,807 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:30:14,830 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
+2020-07-19 10:30:14,857 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, name varchar(50) not null, price bigint not null, catalogue_id bigint, primary key (id)) engine=InnoDB
+2020-07-19 10:30:14,885 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
+2020-07-19 10:30:15,074 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
+2020-07-19 10:30:15,197 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
+2020-07-19 10:30:15,562 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Started PruebaRicohApplication in 4.464 seconds (JVM running for 5.548)
+2020-07-19 10:31:30,791 DEBUG org.hibernate.SQL [Thread-196] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:31:30,832 DEBUG org.hibernate.SQL [Thread-196] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:31:30,845 DEBUG org.hibernate.SQL [Thread-196] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:31:30,859 DEBUG org.hibernate.SQL [Thread-196] drop table if exists catalogs
+2020-07-19 10:31:30,885 DEBUG org.hibernate.SQL [Thread-196] drop table if exists orders
+2020-07-19 10:31:30,940 DEBUG org.hibernate.SQL [Thread-196] drop table if exists product_order
+2020-07-19 10:31:30,966 DEBUG org.hibernate.SQL [Thread-196] drop table if exists products
+2020-07-19 10:31:31,156 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Starting PruebaRicohApplication on DESKTOP-H7E2T70 with PID 7112 (C:\Users\dani_\git\localRepository\Prueba-Ricoh\target\classes started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
+2020-07-19 10:31:31,156 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-19 10:31:31,156 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-07-19 10:31:31,940 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:31:31,945 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:31:31,946 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:31:31,948 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
+2020-07-19 10:31:31,952 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
+2020-07-19 10:31:31,956 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
+2020-07-19 10:31:31,959 DEBUG org.hibernate.SQL [task-1] drop table if exists products
+2020-07-19 10:31:31,961 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:31:31,985 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:31:32,011 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
+2020-07-19 10:31:32,035 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, name varchar(50) not null, price bigint not null, catalogue_id bigint, primary key (id)) engine=InnoDB
+2020-07-19 10:31:32,057 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
+2020-07-19 10:31:32,129 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
+2020-07-19 10:31:32,204 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
+2020-07-19 10:31:32,387 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Started PruebaRicohApplication in 1.274 seconds (JVM running for 82.374)
+2020-07-19 10:31:39,003 DEBUG org.hibernate.SQL [RMI TCP Connection(11)-127.0.0.1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:31:39,024 DEBUG org.hibernate.SQL [RMI TCP Connection(11)-127.0.0.1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:31:39,039 DEBUG org.hibernate.SQL [RMI TCP Connection(11)-127.0.0.1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:31:39,054 DEBUG org.hibernate.SQL [RMI TCP Connection(11)-127.0.0.1] drop table if exists catalogs
+2020-07-19 10:31:39,079 DEBUG org.hibernate.SQL [RMI TCP Connection(11)-127.0.0.1] drop table if exists orders
+2020-07-19 10:31:39,110 DEBUG org.hibernate.SQL [RMI TCP Connection(11)-127.0.0.1] drop table if exists product_order
+2020-07-19 10:31:39,131 DEBUG org.hibernate.SQL [RMI TCP Connection(11)-127.0.0.1] drop table if exists products
+2020-07-19 10:31:51,207 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Starting PruebaRicohApplication on DESKTOP-H7E2T70 with PID 5348 (C:\Users\dani_\git\localRepository\Prueba-Ricoh\target\classes started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
+2020-07-19 10:31:51,210 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-19 10:31:51,210 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-07-19 10:31:54,474 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:31:54,503 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:31:54,505 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:31:54,506 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
+2020-07-19 10:31:54,516 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
+2020-07-19 10:31:54,525 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
+2020-07-19 10:31:54,529 DEBUG org.hibernate.SQL [task-1] drop table if exists products
+2020-07-19 10:31:54,534 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:31:54,559 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:31:54,581 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
+2020-07-19 10:31:54,607 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, name varchar(50) not null, price bigint not null, catalogue_id bigint, primary key (id)) engine=InnoDB
+2020-07-19 10:31:54,628 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
+2020-07-19 10:31:54,711 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
+2020-07-19 10:31:54,826 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
+2020-07-19 10:31:55,276 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Started PruebaRicohApplication in 4.394 seconds (JVM running for 5.493)
+2020-07-19 10:33:16,687 DEBUG org.hibernate.SQL [Thread-196] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:33:16,726 DEBUG org.hibernate.SQL [Thread-196] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:33:16,738 DEBUG org.hibernate.SQL [Thread-196] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:33:16,753 DEBUG org.hibernate.SQL [Thread-196] drop table if exists catalogs
+2020-07-19 10:33:16,778 DEBUG org.hibernate.SQL [Thread-196] drop table if exists orders
+2020-07-19 10:33:16,802 DEBUG org.hibernate.SQL [Thread-196] drop table if exists product_order
+2020-07-19 10:33:16,858 DEBUG org.hibernate.SQL [Thread-196] drop table if exists products
+2020-07-19 10:33:17,016 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Starting PruebaRicohApplication on DESKTOP-H7E2T70 with PID 5348 (C:\Users\dani_\git\localRepository\Prueba-Ricoh\target\classes started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
+2020-07-19 10:33:17,017 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-19 10:33:17,017 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-07-19 10:33:17,814 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:33:17,820 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:33:17,822 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:33:17,823 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
+2020-07-19 10:33:17,826 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
+2020-07-19 10:33:17,830 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
+2020-07-19 10:33:17,833 DEBUG org.hibernate.SQL [task-1] drop table if exists products
+2020-07-19 10:33:17,836 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:33:17,860 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:33:17,891 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
+2020-07-19 10:33:17,914 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, name varchar(50) not null, price bigint not null, catalogue_id bigint, primary key (id)) engine=InnoDB
+2020-07-19 10:33:17,946 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
+2020-07-19 10:33:18,024 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
+2020-07-19 10:33:18,090 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
+2020-07-19 10:33:18,257 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Started PruebaRicohApplication in 1.283 seconds (JVM running for 88.474)
+2020-07-19 10:33:18,748 DEBUG org.hibernate.SQL [RMI TCP Connection(11)-127.0.0.1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:33:18,764 DEBUG org.hibernate.SQL [RMI TCP Connection(11)-127.0.0.1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:33:18,776 DEBUG org.hibernate.SQL [RMI TCP Connection(11)-127.0.0.1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:33:18,790 DEBUG org.hibernate.SQL [RMI TCP Connection(11)-127.0.0.1] drop table if exists catalogs
+2020-07-19 10:33:18,816 DEBUG org.hibernate.SQL [RMI TCP Connection(11)-127.0.0.1] drop table if exists orders
+2020-07-19 10:33:18,840 DEBUG org.hibernate.SQL [RMI TCP Connection(11)-127.0.0.1] drop table if exists product_order
+2020-07-19 10:33:18,854 DEBUG org.hibernate.SQL [RMI TCP Connection(11)-127.0.0.1] drop table if exists products
+2020-07-19 10:33:31,519 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Starting PruebaRicohApplication on DESKTOP-H7E2T70 with PID 7388 (C:\Users\dani_\git\localRepository\Prueba-Ricoh\target\classes started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
+2020-07-19 10:33:31,522 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-19 10:33:31,522 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-07-19 10:33:34,791 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 10:33:34,821 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 10:33:34,823 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 10:33:34,825 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
+2020-07-19 10:33:34,835 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
+2020-07-19 10:33:34,847 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
+2020-07-19 10:33:34,850 DEBUG org.hibernate.SQL [task-1] drop table if exists products
+2020-07-19 10:33:34,855 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:33:34,884 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 10:33:34,908 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
+2020-07-19 10:33:34,936 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, name varchar(50) not null, price bigint not null, catalogue_id bigint, primary key (id)) engine=InnoDB
+2020-07-19 10:33:34,962 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
+2020-07-19 10:33:35,059 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
+2020-07-19 10:33:35,150 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
+2020-07-19 10:33:35,511 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Started PruebaRicohApplication in 4.309 seconds (JVM running for 5.425)
+2020-07-19 10:34:12,023 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-07-19 10:34:12,030 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 7 ms
+2020-07-19 10:34:25,960 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-9] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:34:33,409 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:34:52,195 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:34:57,347 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-5] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:35:01,549 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-10] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:35:09,248 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:35:13,764 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-9] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:35:17,275 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:35:21,399 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:35:22,415 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-5] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:35:22,835 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-10] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:35:23,075 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:35:23,252 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-6] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:35:23,428 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-4] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:35:48,954 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-8] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:35:54,712 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-7] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 10:38:27,339 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-9] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 11:15:34,842 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 11:15:58,656 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-4] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 11:16:04,626 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-8] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 11:16:08,225 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-7] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 11:16:17,843 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-9] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 11:34:46,565 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] [http-nio-8080-exec-2] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlacklistedUrls(StrictHttpFirewall.java:369)
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:194)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-07-19 11:35:04,433 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] [http-nio-8080-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlacklistedUrls(StrictHttpFirewall.java:369)
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:194)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-07-19 11:37:27,094 DEBUG org.hibernate.SQL [RMI TCP Connection(68)-127.0.0.1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 11:37:27,135 DEBUG org.hibernate.SQL [RMI TCP Connection(68)-127.0.0.1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 11:37:27,151 DEBUG org.hibernate.SQL [RMI TCP Connection(68)-127.0.0.1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 11:37:27,167 DEBUG org.hibernate.SQL [RMI TCP Connection(68)-127.0.0.1] drop table if exists catalogs
+2020-07-19 11:37:27,193 DEBUG org.hibernate.SQL [RMI TCP Connection(68)-127.0.0.1] drop table if exists orders
+2020-07-19 11:37:27,219 DEBUG org.hibernate.SQL [RMI TCP Connection(68)-127.0.0.1] drop table if exists product_order
+2020-07-19 11:37:27,246 DEBUG org.hibernate.SQL [RMI TCP Connection(68)-127.0.0.1] drop table if exists products
+2020-07-19 11:37:40,513 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Starting PruebaRicohApplication on DESKTOP-H7E2T70 with PID 7172 (C:\Users\dani_\git\localRepository\Prueba-Ricoh\target\classes started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
+2020-07-19 11:37:40,515 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-19 11:37:40,516 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-07-19 11:37:44,488 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 11:37:44,515 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 11:37:44,517 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 11:37:44,519 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
+2020-07-19 11:37:44,530 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
+2020-07-19 11:37:44,539 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
+2020-07-19 11:37:44,542 DEBUG org.hibernate.SQL [task-1] drop table if exists products
+2020-07-19 11:37:44,547 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 11:37:44,574 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 11:37:44,603 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
+2020-07-19 11:37:44,631 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, name varchar(50) not null, price bigint not null, catalogue_id bigint, primary key (id)) engine=InnoDB
+2020-07-19 11:37:44,661 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
+2020-07-19 11:37:44,743 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
+2020-07-19 11:37:44,828 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
+2020-07-19 11:37:45,215 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Started PruebaRicohApplication in 5.059 seconds (JVM running for 6.361)
+2020-07-19 12:37:33,434 DEBUG org.hibernate.SQL [RMI TCP Connection(69)-127.0.0.1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 12:37:33,483 DEBUG org.hibernate.SQL [RMI TCP Connection(69)-127.0.0.1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 12:37:33,557 DEBUG org.hibernate.SQL [RMI TCP Connection(69)-127.0.0.1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 12:37:33,614 DEBUG org.hibernate.SQL [RMI TCP Connection(69)-127.0.0.1] drop table if exists catalogs
+2020-07-19 12:37:33,649 DEBUG org.hibernate.SQL [RMI TCP Connection(69)-127.0.0.1] drop table if exists orders
+2020-07-19 12:37:33,677 DEBUG org.hibernate.SQL [RMI TCP Connection(69)-127.0.0.1] drop table if exists product_order
+2020-07-19 12:37:33,702 DEBUG org.hibernate.SQL [RMI TCP Connection(69)-127.0.0.1] drop table if exists products
+2020-07-19 13:42:05,611 INFO com.DanidigaDeveloper.app.PruebaRicohApplicationTests [main] Starting PruebaRicohApplicationTests on DESKTOP-H7E2T70 with PID 8292 (started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
+2020-07-19 13:42:05,615 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplicationTests [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-19 13:42:05,616 INFO com.DanidigaDeveloper.app.PruebaRicohApplicationTests [main] No active profile set, falling back to default profiles: default
+2020-07-19 13:42:11,514 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 13:42:11,550 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 13:42:11,554 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 13:42:11,557 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
+2020-07-19 13:42:11,580 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
+2020-07-19 13:42:11,586 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
+2020-07-19 13:42:11,591 DEBUG org.hibernate.SQL [task-1] drop table if exists products
+2020-07-19 13:42:11,601 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 13:42:11,693 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 13:42:11,743 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
+2020-07-19 13:42:11,790 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, name varchar(50) not null, price bigint not null, catalogue_id bigint, primary key (id)) engine=InnoDB
+2020-07-19 13:42:11,841 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
+2020-07-19 13:42:12,011 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
+2020-07-19 13:42:12,163 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
+2020-07-19 13:42:12,899 INFO com.DanidigaDeveloper.app.PruebaRicohApplicationTests [main] Started PruebaRicohApplicationTests in 7.721 seconds (JVM running for 9.305)
+2020-07-19 13:42:13,177 DEBUG org.hibernate.SQL [SpringContextShutdownHook] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 13:42:13,207 DEBUG org.hibernate.SQL [SpringContextShutdownHook] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 13:42:13,228 DEBUG org.hibernate.SQL [SpringContextShutdownHook] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 13:42:13,247 DEBUG org.hibernate.SQL [SpringContextShutdownHook] drop table if exists catalogs
+2020-07-19 13:42:13,282 DEBUG org.hibernate.SQL [SpringContextShutdownHook] drop table if exists orders
+2020-07-19 13:42:13,322 DEBUG org.hibernate.SQL [SpringContextShutdownHook] drop table if exists product_order
+2020-07-19 13:42:13,363 DEBUG org.hibernate.SQL [SpringContextShutdownHook] drop table if exists products
+2020-07-19 13:42:45,810 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Starting PruebaRicohApplication on DESKTOP-H7E2T70 with PID 11952 (C:\Users\dani_\git\localRepository\Prueba-Ricoh\target\classes started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
+2020-07-19 13:42:45,813 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-19 13:42:45,813 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-07-19 13:42:49,117 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 13:42:49,146 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 13:42:49,148 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 13:42:49,150 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
+2020-07-19 13:42:49,164 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
+2020-07-19 13:42:49,179 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
+2020-07-19 13:42:49,184 DEBUG org.hibernate.SQL [task-1] drop table if exists products
+2020-07-19 13:42:49,190 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 13:42:49,240 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 13:42:49,285 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
+2020-07-19 13:42:49,332 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, name varchar(50) not null, price bigint not null, catalogue_id bigint, primary key (id)) engine=InnoDB
+2020-07-19 13:42:49,379 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
+2020-07-19 13:42:49,512 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
+2020-07-19 13:42:49,652 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
+2020-07-19 13:42:50,093 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Started PruebaRicohApplication in 4.612 seconds (JVM running for 5.793)

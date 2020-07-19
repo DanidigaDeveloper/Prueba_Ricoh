@@ -3,6 +3,7 @@ package com.DanidigaDeveloper.app.entity;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
+import java.util.Objects;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,6 +18,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "products")
 public class Product implements Serializable{
@@ -27,103 +33,80 @@ public class Product implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(length = 50)
-	private String description;
+	@Column(length = 50, nullable = false)
+    private String name;
 	
-	//@Column(name="catalogueCode", nullable=false, length = 10, unique = true)
-	//private String catalogueCode;
+	@Column(length = 3, nullable = false)
+    private Long price;
 	
-	//@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    //private Order order;
-	//@ManyToMany(cascade = CascadeType.ALL)
-    //private List<Order> orders;
-	
-	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "catalogue_id", referencedColumnName = "id")
+	@OnDelete(action = OnDeleteAction.CASCADE)
+	@JsonIgnoreProperties("products")
 	private Catalogue catalogue;
-
 
 	public Product() {
 		
 	}
 	
-	
+	public Product(Catalogue catalogue) {
+        this.catalogue = catalogue;
+    }
 
-	public Product(Long id, String description, Catalogue catalogue) {
-		super();
-		this.id = id;
-		this.description = description;
-		this.catalogue = catalogue;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
+	public String getName() {
+		return name;
 	}
 
-	
-
-	public Long getId() {
-		return id;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-
-
-	public void setId(Long id) {
-		this.id = id;
+	public Long getPrice() {
+		return price;
 	}
 
-
-
-	public String getDescription() {
-		return description;
+	public void setPrice(Long price) {
+		this.price = price;
 	}
 
+    public Catalogue getCatalogue() {
+        return catalogue;
+    }
 
 
-	public void setDescription(String description) {
-		this.description = description;
+    public void setCatalogue(Catalogue catalogue) {
+        this.catalogue = catalogue;
+    }
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Product product = (Product) o;
+		return Objects.equals(getId(), product.getId());
 	}
-
-
-
-	public Catalogue getCatalogue() {
-		return catalogue;
-	}
-
-
-
-	public void setCatalogue(Catalogue catalogue) {
-		this.catalogue = catalogue;
-	}
-
-
-
-	
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
-
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Product other = (Product) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
+		return Objects.hash(getId());
 	}
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", description=" + description + ", catalogue=" + catalogue + "]";
+		return "Product{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", price=" + price +
+				", catalogue=" + catalogue +
+				'}';
 	}
 }

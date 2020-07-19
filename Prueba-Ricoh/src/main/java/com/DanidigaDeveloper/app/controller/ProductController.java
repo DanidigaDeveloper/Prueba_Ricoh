@@ -21,6 +21,13 @@ public class ProductController
 	@Autowired
 	private ProductService productService;
 
+	//Create Products
+	@PostMapping()
+	public ResponseEntity<?> createProduct(@RequestBody Product product) {
+		LOGGER.debug("[createProduct]");
+		return ResponseEntity.ok(productService.save(product));
+	}
+	
 	//READ ALL Products
 	@GetMapping()
 	public List<Product> retrieveAllProducts() {

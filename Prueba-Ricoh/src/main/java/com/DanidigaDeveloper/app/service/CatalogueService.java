@@ -1,11 +1,12 @@
 package com.DanidigaDeveloper.app.service;
 
+import java.util.List;
 import java.util.Optional;
 import com.DanidigaDeveloper.app.entity.Catalogue;
 
 public interface CatalogueService {
 
-	public Iterable<Catalogue> findAll();
+	public List<Catalogue> findAll();
 	
 	public Optional<Catalogue> findById(Long Id);
 	

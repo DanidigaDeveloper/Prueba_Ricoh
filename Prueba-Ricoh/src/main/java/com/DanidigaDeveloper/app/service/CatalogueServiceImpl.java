@@ -1,12 +1,15 @@
 package com.DanidigaDeveloper.app.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.DanidigaDeveloper.app.entity.Catalogue;
 import com.DanidigaDeveloper.app.repository.CatalogueRepository;
 
+@Service
 public class CatalogueServiceImpl implements CatalogueService{
 
 	@Autowired
@@ -14,7 +17,7 @@ public class CatalogueServiceImpl implements CatalogueService{
 	
 	@Override
 	@Transactional(readOnly = true)
-	public Iterable<Catalogue> findAll() {
+	public List<Catalogue> findAll() {
 		return catalogueRepository.findAll();
 	}
 

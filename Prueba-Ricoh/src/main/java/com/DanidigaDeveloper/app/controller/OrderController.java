@@ -36,7 +36,7 @@ public class OrderController {
 	}
 	
 	//READ a Order
-	@GetMapping("order/{id}")
+	@GetMapping("{id}")
 	public ResponseEntity<?> readOrder (@PathVariable Long id) {
 		
 		Optional <Order> optOrder = orderService.findById(id);	
