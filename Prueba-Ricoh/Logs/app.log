@@ -260,3 +260,75 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2020-07-19 17:41:41,854 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
 2020-07-19 17:41:41,934 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
 2020-07-19 17:41:42,103 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Started PruebaRicohApplication in 1.372 seconds (JVM running for 1909.777)
+2020-07-19 18:40:51,933 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-07-19 18:40:51,938 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 4 ms
+2020-07-19 18:44:11,994 DEBUG org.hibernate.SQL [RMI TCP Connection(82)-127.0.0.1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 18:44:12,022 DEBUG org.hibernate.SQL [RMI TCP Connection(82)-127.0.0.1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 18:44:12,042 DEBUG org.hibernate.SQL [RMI TCP Connection(82)-127.0.0.1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 18:44:12,068 DEBUG org.hibernate.SQL [RMI TCP Connection(82)-127.0.0.1] drop table if exists catalogs
+2020-07-19 18:44:12,145 DEBUG org.hibernate.SQL [RMI TCP Connection(82)-127.0.0.1] drop table if exists orders
+2020-07-19 18:44:12,189 DEBUG org.hibernate.SQL [RMI TCP Connection(82)-127.0.0.1] drop table if exists product_order
+2020-07-19 18:44:12,233 DEBUG org.hibernate.SQL [RMI TCP Connection(82)-127.0.0.1] drop table if exists products
+2020-07-19 18:44:26,739 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Starting PruebaRicohApplication on DESKTOP-H7E2T70 with PID 9352 (C:\Users\dani_\git\localRepository\Prueba-Ricoh\target\classes started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
+2020-07-19 18:44:26,741 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-19 18:44:26,741 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-07-19 18:44:30,195 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 18:44:30,216 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 18:44:30,217 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 18:44:30,218 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
+2020-07-19 18:44:30,228 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
+2020-07-19 18:44:30,237 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
+2020-07-19 18:44:30,240 DEBUG org.hibernate.SQL [task-1] drop table if exists products
+2020-07-19 18:44:30,245 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 18:44:30,274 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 18:44:30,298 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
+2020-07-19 18:44:30,337 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, name varchar(50) not null, price bigint not null, catalogue_id bigint, primary key (id)) engine=InnoDB
+2020-07-19 18:44:30,384 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
+2020-07-19 18:44:30,494 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
+2020-07-19 18:44:30,597 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
+2020-07-19 18:44:31,135 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Started PruebaRicohApplication in 4.727 seconds (JVM running for 5.975)
+2020-07-19 18:45:44,384 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-07-19 18:45:44,392 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 7 ms
+2020-07-19 18:45:44,456 DEBUG org.hibernate.SQL [http-nio-8080-exec-1] select product0_.id as id1_3_0_, product0_.catalogue_id as catalogu4_3_0_, product0_.name as name2_3_0_, product0_.price as price3_3_0_, catalogue1_.id as id1_0_1_, catalogue1_.description as descript2_0_1_ from products product0_ left outer join catalogs catalogue1_ on product0_.catalogue_id=catalogue1_.id where product0_.id=?
+2020-07-19 18:45:44,494 DEBUG com.DanidigaDeveloper.app.controller.ProductController [http-nio-8080-exec-1] [readProduct]: Product Found->
+2020-07-19 18:45:44,512 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 18:45:44,532 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2020-07-19 18:45:49,440 DEBUG org.hibernate.SQL [http-nio-8080-exec-2] select product0_.id as id1_3_0_, product0_.catalogue_id as catalogu4_3_0_, product0_.name as name2_3_0_, product0_.price as price3_3_0_, catalogue1_.id as id1_0_1_, catalogue1_.description as descript2_0_1_ from products product0_ left outer join catalogs catalogue1_ on product0_.catalogue_id=catalogue1_.id where product0_.id=?
+2020-07-19 18:45:49,444 DEBUG com.DanidigaDeveloper.app.controller.ProductController [http-nio-8080-exec-2] [readProduct]: Product Found->
+2020-07-19 18:46:45,285 DEBUG com.DanidigaDeveloper.app.controller.ProductController [http-nio-8080-exec-5] [retrieveAllProducts]: INIT
+2020-07-19 18:46:45,427 DEBUG org.hibernate.SQL [http-nio-8080-exec-5] select product0_.id as id1_3_, product0_.catalogue_id as catalogu4_3_, product0_.name as name2_3_, product0_.price as price3_3_ from products product0_ inner join catalogs catalogue1_ on product0_.catalogue_id=catalogue1_.id where ?=1
+2020-07-19 18:46:45,430 DEBUG org.hibernate.SQL [http-nio-8080-exec-5] select catalogue0_.id as id1_0_0_, catalogue0_.description as descript2_0_0_ from catalogs catalogue0_ where catalogue0_.id=?
+2020-07-19 18:46:45,432 DEBUG org.hibernate.SQL [http-nio-8080-exec-5] select catalogue0_.id as id1_0_0_, catalogue0_.description as descript2_0_0_ from catalogs catalogue0_ where catalogue0_.id=?
+2020-07-19 18:48:19,543 DEBUG org.hibernate.SQL [http-nio-8080-exec-7] select order0_.id as id1_1_0_, order0_.description as descript2_1_0_ from orders order0_ where order0_.id=?
+2020-07-19 18:48:19,548 DEBUG com.DanidigaDeveloper.app.controller.OrderController [http-nio-8080-exec-7] [readOrder]: Order not Found->
+2020-07-19 19:09:08,172 DEBUG org.hibernate.SQL [Thread-176] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 19:09:08,199 DEBUG org.hibernate.SQL [Thread-176] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 19:09:08,213 DEBUG org.hibernate.SQL [Thread-176] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 19:09:08,229 DEBUG org.hibernate.SQL [Thread-176] drop table if exists catalogs
+2020-07-19 19:09:08,256 DEBUG org.hibernate.SQL [Thread-176] drop table if exists orders
+2020-07-19 19:09:08,306 DEBUG org.hibernate.SQL [Thread-176] drop table if exists product_order
+2020-07-19 19:09:08,331 DEBUG org.hibernate.SQL [Thread-176] drop table if exists products
+2020-07-19 19:09:08,474 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Starting PruebaRicohApplication on DESKTOP-H7E2T70 with PID 9352 (C:\Users\dani_\git\localRepository\Prueba-Ricoh\target\classes started by dani_ in C:\Users\dani_\git\localRepository\Prueba-Ricoh)
+2020-07-19 19:09:08,474 DEBUG com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-19 19:09:08,474 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-07-19 19:09:09,199 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaj38y7vlmaoqbo7wwy1b3jyrr
+2020-07-19 19:09:09,208 DEBUG org.hibernate.SQL [task-1] alter table product_order drop foreign key FKaybj44o3qdfbgyhsd6b06pc7l
+2020-07-19 19:09:09,210 DEBUG org.hibernate.SQL [task-1] alter table products drop foreign key FKns7g3owy5rbdn1kw9ww9wjhe8
+2020-07-19 19:09:09,211 DEBUG org.hibernate.SQL [task-1] drop table if exists catalogs
+2020-07-19 19:09:09,214 DEBUG org.hibernate.SQL [task-1] drop table if exists orders
+2020-07-19 19:09:09,218 DEBUG org.hibernate.SQL [task-1] drop table if exists product_order
+2020-07-19 19:09:09,220 DEBUG org.hibernate.SQL [task-1] drop table if exists products
+2020-07-19 19:09:09,223 DEBUG org.hibernate.SQL [task-1] create table catalogs (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 19:09:09,254 DEBUG org.hibernate.SQL [task-1] create table orders (id bigint not null auto_increment, description varchar(50), primary key (id)) engine=InnoDB
+2020-07-19 19:09:09,278 DEBUG org.hibernate.SQL [task-1] create table product_order (id_order bigint not null, id_product bigint not null, primary key (id_order, id_product)) engine=InnoDB
+2020-07-19 19:09:09,310 DEBUG org.hibernate.SQL [task-1] create table products (id bigint not null auto_increment, name varchar(50) not null, price bigint not null, catalogue_id bigint, primary key (id)) engine=InnoDB
+2020-07-19 19:09:09,341 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaj38y7vlmaoqbo7wwy1b3jyrr foreign key (id_product) references products (id)
+2020-07-19 19:09:09,424 DEBUG org.hibernate.SQL [task-1] alter table product_order add constraint FKaybj44o3qdfbgyhsd6b06pc7l foreign key (id_order) references orders (id)
+2020-07-19 19:09:09,501 DEBUG org.hibernate.SQL [task-1] alter table products add constraint FKns7g3owy5rbdn1kw9ww9wjhe8 foreign key (catalogue_id) references catalogs (id)
+2020-07-19 19:09:09,679 INFO com.DanidigaDeveloper.app.PruebaRicohApplication [restartedMain] Started PruebaRicohApplication in 1.246 seconds (JVM running for 1484.519)
+2020-07-19 19:25:18,095 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2020-07-19 19:25:18,100 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-2] Completed initialization in 4 ms
+2020-07-19 19:25:53,069 DEBUG org.hibernate.SQL [http-nio-8080-exec-3] select product0_.id as id1_3_0_, product0_.catalogue_id as catalogu4_3_0_, product0_.name as name2_3_0_, product0_.price as price3_3_0_, catalogue1_.id as id1_0_1_, catalogue1_.description as descript2_0_1_ from products product0_ left outer join catalogs catalogue1_ on product0_.catalogue_id=catalogue1_.id where product0_.id=?
+2020-07-19 19:25:53,073 DEBUG com.DanidigaDeveloper.app.controller.ProductController [http-nio-8080-exec-3] [readProduct]: Product Found->
+2020-07-19 21:26:31,431 DEBUG org.hibernate.SQL [http-nio-8080-exec-5] select product0_.id as id1_3_0_, product0_.catalogue_id as catalogu4_3_0_, product0_.name as name2_3_0_, product0_.price as price3_3_0_, catalogue1_.id as id1_0_1_, catalogue1_.description as descript2_0_1_ from products product0_ left outer join catalogs catalogue1_ on product0_.catalogue_id=catalogue1_.id where product0_.id=?
+2020-07-19 21:26:31,445 DEBUG com.DanidigaDeveloper.app.controller.ProductController [http-nio-8080-exec-5] [readProduct]: Product Found->
