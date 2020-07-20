@@ -17,8 +17,8 @@ import io.swagger.annotations.*;
                    url = ""
                 )
         ),
-        consumes = {"application/json", "application/xml"},
-        produces = {"application/json", "application/xml"},
+        consumes = {"application/json"},
+        produces = {"application/json"},
         schemes = {SwaggerDefinition.Scheme.HTTP, SwaggerDefinition.Scheme.HTTPS},
         externalDocs = @ExternalDocs(value = "Read Docs.", url = "")
 )

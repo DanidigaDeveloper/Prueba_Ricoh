@@ -2,24 +2,26 @@ package com.DanidigaDeveloper.app.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
+
+import com.DanidigaDeveloper.app.controller.OrderController;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Entity
 @Table(name = "orders")
 public class Order implements Serializable{
+
+	@Transient
+	@JsonIgnore
+	private final Logger LOGGER = LoggerFactory.getLogger(OrderController.class);
 	
 	private static final long serialVersionUID = 4356982789128188794L;
 
@@ -30,19 +32,25 @@ public class Order implements Serializable{
 	@Column(length = 50)
 	private String description;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name="ProductOrder", joinColumns= {@JoinColumn(name="IdOrder")}, inverseJoinColumns={@JoinColumn(name="IdProduct")})
-	 private Set<Product> products;
+	@OneToMany(mappedBy = "order", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JsonManagedReference
+	private List<OrderItem> items = new ArrayList<OrderItem>();
 
-	public Order() {
-		
+	@Transient
+	public Double getTotalOrderPrice() {
+		double sum = 0D;
+		LOGGER.debug("[getTotalOrderPrice]: orderItems : {}", getItems());
+		List<OrderItem> orderItems = getItems();
+		for (OrderItem op : orderItems) {
+			LOGGER.debug("[getTotalOrderPrice]: op : {} {} {}", op, op.getQuantity(), op.getProduct());
+			if (op.getProduct() != null)
+				sum += op.getQuantity() * op.getProduct().getPrice();
+		}
+		return sum;
 	}
 	
-	public Order(Long id, String description, Set<Product> products) {
-		super();
-		this.id = id;
-		this.description = description;
-		this.products = products;
+	public Order() {
+		
 	}
 	
 	public Long getId() {
@@ -61,12 +69,12 @@ public class Order implements Serializable{
 		this.description = description;
 	}
 
-	public Set<Product> getProducts() {
-		return products;
+	public List<OrderItem> getItems() {
+		return items;
 	}
 
-	public void setProducts(Set<Product> products) {
-		this.products = products;
+	public void setItems(List<OrderItem> items) {
+		this.items = items;
 	}
 
 	@Override
@@ -96,7 +104,7 @@ public class Order implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", description=" + description + ", products=" + products + "]";
+		return "Order [id=" + id + ", description=" + description + ", items=" + items + "]";
 	}
 
 }

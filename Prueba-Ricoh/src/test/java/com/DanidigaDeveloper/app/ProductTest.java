@@ -16,7 +16,7 @@ class ProductTest {
 
 	@Test
 	void testCreateProduct() {
-		//Product productTest = new Product("Product 5",(long )40, 1);
+		//Product productTest = new Product();
 	}
 
 	
